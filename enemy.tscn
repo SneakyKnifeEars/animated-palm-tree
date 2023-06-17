@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://csbud6f0h0u1t"]
+
+[ext_resource type="Texture2D" uid="uid://bue1ufn2mb35e" path="res://icon.svg" id="1_v43mu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppoa7"]
+size = Vector2(60, 58)
+
+[node name="Enemy" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ppoa7")
+
+[node name="Temp" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v43mu")
