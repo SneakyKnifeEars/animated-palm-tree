@@ -6,6 +6,7 @@
 
 [node name="main" type="Node"]
 script = ExtResource("1_8dkri")
+enemy_scene = ExtResource("2_jyc3l")
 
 [node name="Player" parent="." instance=ExtResource("1_1y0mf")]
 position = Vector2(482, 246)
@@ -17,5 +18,6 @@ position = Vector2(251, 281)
 
 [node name="enemySpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
+autostart = true
 
 [connection signal="timeout" from="enemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
