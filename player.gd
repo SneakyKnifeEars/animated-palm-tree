@@ -26,4 +26,5 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 		
 	position += velocity * delta
-	rotation = velocity.angle()
+	if velocity:
+		rotation = velocity.angle()
