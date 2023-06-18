@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf805igfsubbq"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_tdjs5"]
+[ext_resource type="Texture2D" uid="uid://bue1ufn2mb35e" path="res://icon.svg" id="1_xfob1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16j2m"]
+radius = 7.07107
+
+[node name="Projectile" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_tdjs5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_16j2m")
+
+[node name="Temp" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_xfob1")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

@@ -1,10 +1,10 @@
-extends Node
+extends RigidBody2D
 
-@export var enemy_scene: PackedScene
+@export var damage = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,6 +12,5 @@ func _process(delta):
 	pass
 
 
-func _on_enemy_spawn_timer_timeout():
-	var enemy = enemy_scene.instantiate()
-	add_child(enemy)
+func _on_life_timer_timeout():
+	queue_free()

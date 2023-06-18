@@ -1,6 +1,7 @@
-extends Area2D
+extends RigidBody2D
 
 @export var speed = 100
+@export var health = 20
 @export var target_player: Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,8 +11,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (target_player != null):
-		var player_direction = position - target_player.position
-		var velocity = -1 * player_direction.normalized() * speed
+		var player_direction = target_player.position - position
+		var velocity = player_direction.normalized() * speed
 		position += velocity * delta
 	
 
