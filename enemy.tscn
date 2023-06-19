@@ -7,6 +7,7 @@
 size = Vector2(44, 44)
 
 [node name="Enemy" type="RigidBody2D"]
+collision_mask = 5
 gravity_scale = 0.0
 script = ExtResource("1_e83ss")
 

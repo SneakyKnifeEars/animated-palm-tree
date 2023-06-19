@@ -8,6 +8,7 @@
 radius = 25.7099
 
 [node name="Player" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_wo4w4")
 projectile = ExtResource("2_nk6r1")
 
